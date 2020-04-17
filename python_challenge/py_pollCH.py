@@ -43,10 +43,19 @@ Khan = len(Khanvote)
 Correy = len(Correyvote)
 Li = len(Livote)
 Otooley = len(Otooleyvote)
-
+#%%
 winners_circle = [Khan, Correy, Li, Otooley]
 winner = max(winners_circle)
+winner_name = ' ' 
 
+if winner == Khan:
+    winner_name = "Khan"
+elif winner == Correy:
+    winner_name = 'Correy'
+elif winner == Li:
+    winner_name = "Li"
+else: winner_name = "O'Tooley"
+#%%
 
 khanpct = Khan / total_votes
 correypct = Correy / total_votes
@@ -54,16 +63,18 @@ lipct = Li / total_votes
 otooleypct = Otooley / total_votes
 
 #%%
-     
-print('Election Results')
-print('------------------')
-print(f'Total Votes: {total_votes:,d}')
-print('------------------')
-print(f'Khan: {khanpct:,.2%} [{Khan:,d}]')
-print(f'Correy: {correypct:,.2%} [{Correy:,d}]')
-print(f'Li: {lipct:,.2%} [{Li:,d}]')
-print(f"O'Tooley: {otooleypct:,.2%} [{Otooley:,d}]")
-print('------------------')
-print(f'Winner: var{winner}')
-print('------------------')
-
+output = os.path.join('poll.txt')
+with open(output, "w") as txt_file:
+    election_results = (
+    f"\n\nElection Results\n"
+    f"-------------------------\n"
+    f"Total Votes: [{total_votes:,d}]\n"
+    f'Khan: {khanpct:,.2%} [{Khan:,d}]\n'
+    f'Correy: {correypct:,.2%} [{Correy:,d}]\n'
+    f'Li: {lipct:,.2%} [{Li:,d}]\n'
+    f"O'Tooley: {otooleypct:,.2%} [{Otooley:,d}]\n"
+    f"-------------------------\n"
+    f'Winner: {winner_name}\n')
+    print(election_results, end="")
+    txt_file.write(election_results)
+    
