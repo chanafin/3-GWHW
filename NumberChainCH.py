@@ -20,7 +20,6 @@ while playing == 'y':
         break
     elif playing == 'y':
         continue
-    else: 
-        continue
+    
 
         
