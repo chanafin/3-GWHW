@@ -14,10 +14,8 @@ Correyvote = []
 Livote = []
 Otooleyvote = []
 
-
-closedfile = os.path.join('election_data.csv')
 #%%
-
+closedfile = os.path.join('election_data.csv')
 with open(closedfile, 'r') as openfile:
     pypoll = csv.reader(openfile, delimiter = ',')
     next(pypoll)
