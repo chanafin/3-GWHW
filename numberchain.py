@@ -16,7 +16,7 @@ while playing == 'y':
     "The input asks the user to input the status of the variable 'playing'"  
     playing = input("Are you still playing? (y)es or (n)o ")
     
-    "the script ends if playing == 'n' or continues if == 'y'
+    "the script ends if playing == 'n' or continues if == 'y'"
     if playing == 'n':
         break
     elif playing == 'y':
