@@ -1,6 +1,4 @@
-# Initial variable to track game play
 
-    
 number = 0
 
 playing = 'y'
